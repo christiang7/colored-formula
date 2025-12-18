@@ -162,7 +162,7 @@ used for indents, metadata, Link Reference, Comments
 
 *indent-light-wiki*
 ```bash
-foreground=#737373
+foreground=#9caeeb
 ```
 
 #737373
