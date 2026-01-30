@@ -12,7 +12,7 @@ Created [2025-03-20]()
 ## Latex File
 
 *test-color.tex*
-```tex
+```latex
 \documentclass[10pt,fleqn,reqno,a4paper]{article}
 \input{general-preamble.tex}
 \input{color-style.tex}
