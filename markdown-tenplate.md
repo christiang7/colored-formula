@@ -32,7 +32,7 @@ Unordered lists can be made using asterisks, pluses, or hyphens.
 
 1. Item one
 
-- [x] This task has been completed
+- [X] This task has been completed
 
 Code blocks
 
