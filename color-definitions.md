@@ -938,6 +938,12 @@ weight=PANGO_WEIGHT_BOLD
             },
             "Strong-Emphasis Text": {
                 #*mark-light}}
+            },
+            "List: Strong Text": {
+                #*bold-light}}
+            },
+            "List: Strong-Emphasis Text": {
+                #*mark-light}}
             }
         },
         "Python": {

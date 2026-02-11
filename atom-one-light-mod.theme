@@ -198,6 +198,14 @@
             "Strong-Emphasis Text": {
                 "selected-text-color": "#f2ae49",
                 "text-color": "#f2ae49"
+            },
+            "List: Strong Text": {
+                "selected-text-color": "#4078f2",
+                "text-color": "#4078f2"
+            },
+            "List: Strong-Emphasis Text": {
+                "selected-text-color": "#f2ae49",
+                "text-color": "#f2ae49"
             }
         },
         "Python": {
