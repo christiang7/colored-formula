@@ -18,7 +18,8 @@ noweb.py -Rstyle-light.conf color-definitions.md > style.conf && echo 'style.con
 noweb.py -Rcolor-style.tex color-definitions.md > color-style.tex
 noweb.py -Ratom-one-light-mod.theme color-definitions.md > atom-one-light-mod.theme
 cp color-style.tex test-color_tex/color-style.tex
-cp color-style.tex ~/Erkenntnisstudio/Vorlagen/color-style.tex
+cp color-style.tex ~/.config/Vorlagen/color-style.tex
+cp atom-one-light-mod.theme ~/.config/Vorlagen/atom-one-light-mod.theme
 ln -sf $(pwd)/style.conf ~/.config/zim/style.conf && echo 'fertig'
 ```
 
