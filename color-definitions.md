@@ -243,6 +243,7 @@ foreground=#d19a66
 
 ### important quantity
 #3890b5
+teal color
 
 *important-quantity*
 ```bash
