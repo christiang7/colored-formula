@@ -690,17 +690,16 @@ linespacing=3
 wrapped-lines-linespacing=0
 #font=! style=71083284 variant=800544037 17
 font=Ubuntu 17
-justify=FILL
+justify=LEFT
 pixels-inside-wrap=30
 
 [Tag strong]
-weight=PANGO_WEIGHT_BOLD
 #*bold-light-wiki}}
-
+weight=PANGO_WEIGHT_BOLD
 
 [Tag emphasis]
-style=PANGO_STYLE_ITALIC
 #*emphasis-light-wiki}}
+style=PANGO_STYLE_ITALIC
 
 [Tag mark]
 #*mark-light-wiki}}
@@ -1217,7 +1216,7 @@ indent=30
 tabs=None
 linespacing=3
 wrapped-lines-linespacing=0
-font=! style=71083284 variant=800544037 17
+font=Ubuntu 17
 justify=LEFT
 pixels-inside-wrap=30
 
