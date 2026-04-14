@@ -1,0 +1,113 @@
+===== template-style.conf =====
+# template-style.conf
+Created 2026-04-14
+
+
+## Description
+
+## Journal
+ - [X] Backlog
+    - [ ] 
+ - [X] Doing
+ 
+## conf code
+
+
+*make.sh*
+```bash
+noweb.py -Rtemplate-style.conf template-style.conf.md > template-style.conf && echo 'template-style.conf' && notify-send -a "Compilation of template-style.conf" "" "$(date +"%Y-%m-%d") fertig" 
+```
+
+
+```bash
+chmod u+x template-style.conf && ln -sf $(pwd)/template-style.conf ~/.local/bin/template-style.conf && echo 'fertig'
+```
+
+*template-style.conf*
+```bash
+[TextView]
+bullet_icon_size=GTK_ICON_SIZE_MENU
+indent=30
+tabs=None
+linespacing=3
+wrapped-lines-linespacing=0
+#font=! style=71083284 variant=800544037 17
+font={{font}} {{font-size}}
+justify=LEFT
+pixels-inside-wrap=30
+
+[Tag strong]
+foreground={{bold-color}}
+weight=PANGO_WEIGHT_BOLD
+
+[Tag emphasis]
+foreground={{emphasis-color}}
+style=PANGO_STYLE_ITALIC
+
+[Tag mark]
+foreground={{mark-color}}
+background={{mark-background-color}}
+
+[Tag strike]
+foreground={{strike-color}}
+strikethrough={{strike-through}}
+
+[Tag indent]
+foreground={{indent-color}}
+
+[Tag code]
+foreground={{code-color}}
+family=monospace
+
+[Tag pre]
+foreground={{verbatim-color}}
+family=monospace
+indent=20
+
+[Tag page-link]
+foreground={{page-link-color}}
+underline=PANGO_UNDERLINE_SINGLE
+
+[Tag link]
+foreground={{link-color}}
+underline=PANGO_UNDERLINE_SINGLE
+
+[Tag tag]
+foreground={{tag-color}}
+
+[Tag h1]
+foreground={{section-color}}
+underline=PANGO_UNDERLINE_SINGLE
+weight=PANGO_WEIGHT_BOLD
+scale=1.75
+
+[Tag h2]
+foreground={{section-color}}
+weight=PANGO_WEIGHT_BOLD
+scale=1.52
+
+[Tag h3]
+foreground={{section-color}}
+style=PANGO_STYLE_ITALIC
+weight=PANGO_WEIGHT_BOLD
+scale=1.32
+
+[Tag h4]
+foreground={{section-color}}
+weight=PANGO_WEIGHT_BOLD
+scale=1.15
+
+[Tag h5]
+foreground={{section-color}}
+weight=PANGO_WEIGHT_BOLD
+
+[Tag h6]
+foreground={{section-color}}
+
+[Tag checked-checkbox]
+
+[Tag xchecked-checkbox]
+
+[Tag migrated-checkbox]
+
+```
