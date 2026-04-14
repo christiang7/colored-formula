@@ -1,6 +1,7 @@
 {
    "Normal": {
       "text-color": "#434c5e",
+      "background-color": "#f5f5f5",
       "bold": false,
       "italic": false,
       "underline": false,
@@ -81,6 +82,13 @@
    },
    "Tag": {
       "text-color": "#d19a66",
+      "bold": false,
+      "italic": false,
+      "underline": false,
+      "strike-through": false
+   },
+   "Index": {
+      "text-color": "#b30000",
       "bold": false,
       "italic": false,
       "underline": false,

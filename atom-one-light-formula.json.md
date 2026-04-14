@@ -1,5 +1,4 @@
-===== atom-one-light.json =====
-# atom-one-light.json
+# atom-one-light-formula.json
 Created 2026-04-14
 
 
@@ -15,19 +14,15 @@ Created 2026-04-14
 
 *make.sh*
 ```bash
-noweb.py -Ratom-one-light.json atom-one-light.json.md > atom-one-light.json && echo 'atom-one-light.json' && notify-send -a "Compilation of atom-one-light.json" "" "$(date +"%Y-%m-%d") fertig" 
+noweb.py -Ratom-one-light-formula.json atom-one-light-formula.json.md > atom-one-light-formula.json && echo 'atom-one-light-formula.json' && notify-send -a "Compilation of atom-one-light-formula.json" "" "$(date +"%Y-%m-%d") fertig" 
 ```
 
 
-```bash
-chmod u+x atom-one-light.json && ln -sf $(pwd)/atom-one-light.json ~/.local/bin/atom-one-light.json && echo 'fertig'
-```
-
-*atom-one-light.json*
+*atom-one-light-formula.json*
 ```json
 {
    "Normal": {
-      "text-color": "#434c5e",
+      "text-color": "#000000",
       "background-color": "#f5f5f5",
       "bold": false,
       "italic": false,
@@ -36,82 +31,54 @@ chmod u+x atom-one-light.json && ln -sf $(pwd)/atom-one-light.json ~/.local/bin/
       "font": "Ubuntu",
       "font-size": 17 
    },
-   "Section": {
+   "Important": {
       "text-color": "#0184bc",
       "bold": false,
       "italic": false,
       "underline": false,
       "strike-through": false
    },
-   "Bold": {
+   "Function": {
       "text-color": "#4078f2",
-      "bold": true,
+      "bold": false,
       "italic": false,
       "underline": false,
       "strike-through": false
    },
-   "Emphasis": {
-      "text-color": "#e45649",
+   "Operator": {
+      "text-color": "#4078f2",
       "bold": false,
-      "italic": true,
+      "italic": false,
       "underline": false,
       "strike-through": false
    },
-   "Mark": {
-      "text-color": "#f2ae49",
+   "Variable": {
+      "text-color": "#a0a1a7",
       "background-color": "#f5f5f5",
       "bold": false,
       "italic": false,
       "underline": false,
       "strike-through": false
    },
-   "Strike": {
-      "text-color": "#a0a1a7",
-      "bold": false,
-      "italic": false,
-      "underline": false,
-      "strike-through": false
-   },
-   "Link": {
-      "text-color": "#a626a4",
-      "bold": false,
-      "italic": false,
-      "underline": true,
-      "strike-through": false
-   },
-   "Page-link": {
+   "Parameter": {
       "text-color": "#50a14f",
       "bold": false,
       "italic": false,
+      "underline": false,
+      "strike-through": false
+   },
+   "Stochastic": {
+      "text-color": "#986801",
+      "bold": false,
+      "italic": false,
       "underline": true,
       "strike-through": false
    },
-   "Verbatim": {
-      "text-color": "#986801",
-      "bold": false,
-      "italic": false,
-      "underline": false,
-      "strike-through": false
-   },
-   "Code": {
-      "text-color": "#986801",
-      "bold": false,
-      "italic": false,
-      "underline": false,
-      "strike-through": false
-   },
-   "Indent": {
+   "Data": {
       "text-color": "#9caeeb",
       "bold": false,
       "italic": false,
-      "underline": false,
-      "strike-through": false
-   },
-   "Tag": {
-      "text-color": "#d19a66",
-      "bold": false,
-      "italic": false,
-      "underline": false,
+      "underline": true,
       "strike-through": false
    },
    "Index": {

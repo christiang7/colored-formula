@@ -1,4 +1,3 @@
-===== template-text-color.json =====
 # template-text-color.json
 Created 2026-04-14
 
@@ -28,6 +27,7 @@ chmod u+x template-text-color.json && ln -sf $(pwd)/template-text-color.json ~/.
 {
    "Normal": {
       "text-color": "#1f1c1b",
+      "background-color": "#f5f5f5",
       "bold": false,
       "italic": false,
       "underline": false,
@@ -113,5 +113,12 @@ chmod u+x template-text-color.json && ln -sf $(pwd)/template-text-color.json ~/.
       "underline": false,
       "strike-through": false
    },
+   "Index": {
+      "text-color": "#1f1c1b",
+      "bold": false,
+      "italic": false,
+      "underline": false,
+      "strike-through": false
+   }
 }
 ```

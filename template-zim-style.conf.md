@@ -1,5 +1,5 @@
-===== template-style.conf =====
-# template-style.conf
+===== template-zim-style.conf =====
+# template-zim-style.conf
 Created 2026-04-14
 
 
@@ -15,15 +15,11 @@ Created 2026-04-14
 
 *make.sh*
 ```bash
-noweb.py -Rtemplate-style.conf template-style.conf.md > template-style.conf && echo 'template-style.conf' && notify-send -a "Compilation of template-style.conf" "" "$(date +"%Y-%m-%d") fertig" 
+noweb.py -Rtemplate-zim-style.conf template-zim-style.conf.md > template-zim-style.conf && echo 'template-zim-style.conf' && notify-send -a "Compilation of template-zim-style.conf" "" "$(date +"%Y-%m-%d") fertig" 
 ```
 
 
-```bash
-chmod u+x template-style.conf && ln -sf $(pwd)/template-style.conf ~/.local/bin/template-style.conf && echo 'fertig'
-```
-
-*template-style.conf*
+*template-zim-style.conf*
 ```bash
 [TextView]
 bullet_icon_size=GTK_ICON_SIZE_MENU
