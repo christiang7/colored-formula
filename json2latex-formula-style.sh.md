@@ -1,4 +1,3 @@
-===== json2latex-formula-style.sh =====
 # json2latex-formula-style.sh
 Created 2026-04-14
 
