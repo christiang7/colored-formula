@@ -1,5 +1,5 @@
-# template-formula-style.tex
-Created 2026-04-14
+# symbol-style.tex
+Created 2026-04-15
 
 
 ## Description
@@ -14,53 +14,14 @@ Created 2026-04-14
 
 *make.sh*
 ```bash
-noweb.py -Rtemplate-formula-style.tex template-formula-style.tex.md > template-formula-style.tex && notify-send -a "Compilation of template-formula-style.tex" "" "$(date +"%Y-%m-%d") fertig"
+noweb.py -Rsymbol-style.tex symbol-style.tex.md > symbol-style.tex && notify-send -a "Compilation of symbol-style.tex" "" "$(date +"%Y-%m-%d") fertig" 
 ```
 
 
-*template-formula-style.tex*
+*symbol-style.tex*
 ```latex
-% Farbige Formeln richtig einfärben über die group Umgebung
-\def\mathcolor#1#{\@mathcolor{#1}}
-\def\@mathcolor#1#2#3{%
-	\protect\leavevmode
-	\begingroup\color#1{#2}#3\endgroup
-}
-\newcommand*{\opcolor}[2]{\mathop{\color{#1}{#2}}}
-%%%%%%%%%%%%%% important variables
 
-\definecolor{color-important}{HTML}{ {{important-color}} }
-
-\definecolor{color-function-operator}{HTML}{ {{function-color}} }
-
-\definecolor{color-operator}{HTML}{ {{operator-color}} }
-
-\definecolor{color-general-variable}{HTML}{ {{variable-color}} }
-
-\definecolor{color-index}{HTML}{ {{index-color}} }
-
-\definecolor{color-parameter}{HTML}{ {{parameter-color}} }
-
-\definecolor{color-stochastic}{HTML}{ {{stochastic-color}} }
-
-\definecolor{color-data}{HTML}{ {{data-color}} }
-
-%--- markup of latex
-
-\newcommand{\cimp}[1]{\textcolor{color-important}{\textbf{#1}}}
-
-\newcommand{\csto}[1]{\textcolor{color-stochastic}{\textbf{#1}}}
-
-\newcommand{\cpara}[1]{\textcolor{color-parameter}{\textbf{#1}}}
-
-\newcommand{\cgen}[1]{\textcolor{color-general-variable}{\textbf{#1}}}
-
-\newcommand{\cfunc}[1]{\textcolor{color-function-operator}{\textbf{#1}}}
-
-%\newcommand{\cind}[1]{\textcolor{color-index}{\textbf{#1}}}
-
-%--- Equations - formulas
-
+%-- important 
 \newcommand{\nL}{{ \color{color-important} L } }
 
 \newcommand{\nnL}{{ \color{color-important} \mathcal{L}  } }
@@ -204,18 +165,10 @@ noweb.py -Rtemplate-formula-style.tex template-formula-style.tex.md > template-f
 
 %%%%%%%%%%%%%% Operators
 
-\newcommand{\oupdelta}{{\color{color-function-operator}\updelta}}
-\newcommand{\ovary}{{\color{color-function-operator}\updelta}}
-\newcommand{\opartial}{\mathrm{\mathcolor{color-function-operator}\partial}}
-\newcommand{\osum}[2]{\ensuremath{\mathcolor{color-function-operator}{\sum _{\mathcolor{black}{#1}} ^{\mathcolor{black}{#2}} }}}
-\newcommand{\ooint}[2]{\ensuremath{\mathcolor{color-function-operator}{\int \limits_{\mathcolor{black}{#1}}^{\mathcolor{black}{#2}} }}}
-\newcommand{\osqrt}[1]{\ensuremath{\mathcolor{color-function-operator}{\sqrt{\mathcolor{black}{#1}} }}}
 \newcommand{\ocom}{{\color{color-function-operator},}}
 \newcommand{\osem}{{\color{color-function-operator};}}
 \newcommand{\odiag}{{\color{color-function-operator}\mathrm{diag}}}
 \newcommand{\odet}{{\color{color-function-operator}\mathrm{det}}}
-\newcommand{\oodot}[1]{\ensuremath{\mathcolor{color-function-operator}{\dot{\mathcolor{black}{#1}} }}}
-\newcommand{\ooddot}[1]{\ensuremath{\mathcolor{color-function-operator}{\ddot{\mathcolor{black}{#1}} }}}
 \newcommand{\ropartial}{{\opcolor{color-function-operator}\partial_{\ccr}}}
 \newcommand{\topartial}{{\opcolor{color-function-operator}\partial_{\ct}}}
 \newcommand{\npartial}{{\color{color-function-operator}\partial}}
@@ -300,5 +253,4 @@ noweb.py -Rtemplate-formula-style.tex template-formula-style.tex.md > template-f
 \newcommand{\MM}{M}
 \newcommand{\va}{{\color{color-index}\mathrm{a}}}
 \newcommand{\vV}{{\color{violet!80!black}V}}%#660066
-
 ```

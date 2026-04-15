@@ -1,34 +1,8 @@
-# json2latex-formula-style.sh
-Created 2026-04-14
-
-
-## Description
-
-## Journal
- - [X] Backlog
-    - [ ] 
- - [X] Doing
- 
-## bash code
-
-
-*make.sh*
-```bash
-noweb.py -Rjson2latex-formula-style.sh json2latex-formula-style.sh.md > json2latex-formula-style.sh && echo 'json2latex-formula-style.sh' && notify-send -a "Compilation of json2latex-formula-style.sh" "" "$(date +"%Y-%m-%d") fertig" 
-```
-
-
-```bash
-chmod u+x json2latex-formula-style.sh && ln -sf $(pwd)/json2latex-formula-style.sh ~/.local/bin/json2latex-formula-style.sh && echo 'fertig'
-```
-
-*json2latex-formula-style.sh*
-```bash
 #!/bin/bash
 jsonFile="$1"
 jsonFilename="$(basename $jsonFile .json)"
-styleFile="$jsonFilename-formula-style.tex"
-request=$(yad --title="Convert json to latex-formula-style.tex?" --text="" \
+styleFile="$jsonFilename-style.tex"
+request=$(yad --title="Convert json to formula-style.tex?" --text="" \
 	--form --width 500 --separator="~" --item-separator=","  \
 	--field="Filename" \
 	"$styleFile")
@@ -50,4 +24,3 @@ then
    sed -i "s/{{index-color}}/$(jq -r '."Index"."text-color"' $jsonFile | sed "s/#//g")/g" "$styleFile"
    cp "$styleFile" formula-style.tex
 fi
-```
