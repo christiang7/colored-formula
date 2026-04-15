@@ -23,7 +23,9 @@ noweb.py -Rtest-color.tex test-color.tex.md > test-color.tex && lualatex -intera
 	fontsize=12pt,
 a4paper]{scrartcl}
 \input{general-preamble.tex}
-\input{color-style.tex}
+%\input{color-style.tex}
+\input{text-style.tex}
+\input{formula-style.tex}
 \begin{document}%\selectlanguage{english}
 %\cpart{new chapter}
 
