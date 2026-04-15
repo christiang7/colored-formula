@@ -1,4 +1,8 @@
 {
+   "Meta": {
+      "name": "",
+      "version": "1.0"
+   },
    "Normal": {
       "text-color": "#1f1c1b",
       "background-color": "#f5f5f5",

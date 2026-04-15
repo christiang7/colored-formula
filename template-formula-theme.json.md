@@ -1,4 +1,4 @@
-# template-formula-color.json
+# template-formula-theme.json
 Created 2026-04-14
 
 
@@ -14,17 +14,16 @@ Created 2026-04-14
 
 *make.sh*
 ```bash
-noweb.py -Rtemplate-formula-color.json template-formula-color.json.md > template-formula-color.json && echo 'template-formula-color.json' && notify-send -a "Compilation of template-formula-color.json" "" "$(date +"%Y-%m-%d") fertig" 
+noweb.py -Rtemplate-formula-theme.json template-formula-theme.json.md > template-formula-theme.json && echo 'template-formula-theme.json' && notify-send -a "Compilation of template-formula-theme.json" "" "$(date +"%Y-%m-%d") fertig" 
 ```
 
-
-```bash
-chmod u+x template-formula-color.json && ln -sf $(pwd)/template-formula-color.json ~/.local/bin/template-formula-color.json && echo 'fertig'
-```
-
-*template-formula-color.json*
+*template-formula-theme.json*
 ```json
 {
+   "Meta": {
+      "name": "",
+      "version": "1.0"
+   },
    "Normal": {
       "text-color": "#1f1c1b",
       "background-color": "#f5f5f5",

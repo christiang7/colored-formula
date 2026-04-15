@@ -1,4 +1,4 @@
-# template-text-color.json
+# template-text-theme.json
 Created 2026-04-14
 
 
@@ -14,17 +14,17 @@ Created 2026-04-14
 
 *make.sh*
 ```bash
-noweb.py -Rtemplate-text-color.json template-text-color.json.md > template-text-color.json && echo 'template-text-color.json' && notify-send -a "Compilation of template-text-color.json" "" "$(date +"%Y-%m-%d") fertig" 
+noweb.py -Rtemplate-text-theme.json template-text-theme.json.md > template-text-theme.json && echo 'template-text-theme.json' && notify-send -a "Compilation of template-text-theme.json" "" "$(date +"%Y-%m-%d") fertig" 
 ```
 
 
-```bash
-chmod u+x template-text-color.json && ln -sf $(pwd)/template-text-color.json ~/.local/bin/template-text-color.json && echo 'fertig'
-```
-
-*template-text-color.json*
+*template-text-theme.json*
 ```json
 {
+   "Meta": {
+      "name": "",
+      "version": "1.0"
+   },
    "Normal": {
       "text-color": "#1f1c1b",
       "background-color": "#f5f5f5",

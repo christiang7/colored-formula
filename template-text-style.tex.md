@@ -1,26 +1,48 @@
-\definecolor{color-text}{HTML}{ #434c5e }
+# template-text-style.tex
+Created 2026-04-14
 
-\definecolor{color-background-text}{HTML}{ #f5f5f5 }
 
-\definecolor{color-section}{HTML}{ #0184bc }
+## Description
 
-\definecolor{color-important}{HTML}{ #0184bc }
+## Journal
+ - [X] Backlog
+    - [ ] 
+ - [X] Doing
 
-\definecolor{color-index}{HTML}{ #b30000 }
+## Latex File
 
-\definecolor{color-link}{HTML}{ #a626a4 }
 
-\definecolor{page-color-link}{HTML}{ #50a14f }
+*make.sh*
+```bash
+noweb.py -Rtemplate-text-style.tex template-text-style.tex.md > template-text-style.tex && notify-send -a "Compilation of template-text-style.tex" "" "$(date +"%Y-%m-%d") fertig" 
+```
 
-\definecolor{color-bold}{HTML}{ #4078f2 }
 
-\definecolor{color-emphasis}{HTML}{ #e45649 }
+*template-text-style.tex*
+```latex
+\definecolor{color-text}{HTML}{ {{text-color}} }
 
-\definecolor{color-mark}{HTML}{ #f2ae49 }
+\definecolor{color-background-text}{HTML}{ {{text-background-color}} }
 
-\definecolor{color-strike}{HTML}{ #a0a1a7 }
+\definecolor{color-section}{HTML}{ {{section-color}} }
 
-\definecolor{color-verbatim}{HTML}{ #986801 }
+\definecolor{color-important}{HTML}{ {{section-color}} }
+
+\definecolor{color-index}{HTML}{ {{index-color}} }
+
+\definecolor{color-link}{HTML}{ {{link-color}} }
+
+\definecolor{page-color-link}{HTML}{ {{page-link-color}} }
+
+\definecolor{color-bold}{HTML}{ {{bold-color}} }
+
+\definecolor{color-emphasis}{HTML}{ {{emphasis-color}} }
+
+\definecolor{color-mark}{HTML}{ {{mark-color}} }
+
+\definecolor{color-strike}{HTML}{ {{strike-color}} }
+
+\definecolor{color-verbatim}{HTML}{ {{verbatim-color}} }
 
 
 %--- markup of latex
@@ -82,3 +104,4 @@
 \renewcommand{\thetable}{\textcolor{color-index}{\textbf{\arabic{table}}}}
 \renewcommand{\thefigure}{\textcolor{color-index}{\textbf{\arabic{figure}}}}
 
+```

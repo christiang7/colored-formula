@@ -1,25 +1,3 @@
-# template-latex-formula-style.tex
-Created 2026-04-14
-
-
-## Description
-
-## Journal
- - [X] Backlog
-    - [ ] 
- - [X] Doing
-
-## Latex File
-
-
-*make.sh*
-```bash
-noweb.py -Rtemplate-latex-formula-style.tex template-latex-formula-style.tex.md > template-latex-formula-style.tex && notify-send -a "Compilation of template-latex-formula-style.tex" "" "$(date +"%Y-%m-%d") fertig"
-```
-
-
-*template-latex-formula-style.tex*
-```latex
 % Farbige Formeln richtig einfärben über die group Umgebung
 \def\mathcolor#1#{\@mathcolor{#1}}
 \def\@mathcolor#1#2#3{%
@@ -29,21 +7,21 @@ noweb.py -Rtemplate-latex-formula-style.tex template-latex-formula-style.tex.md 
 \newcommand*{\opcolor}[2]{\mathop{\color{#1}{#2}}}
 %%%%%%%%%%%%%% important variables
 
-\definecolor{color-important}{HTML}{ {{important-color}} }
+\definecolor{color-important}{HTML}{ null }
 
-\definecolor{color-function-operator}{HTML}{ {{function-color}} }
+\definecolor{color-function-operator}{HTML}{ null }
 
-\definecolor{color-operator}{HTML}{ {{operator-color}} }
+\definecolor{color-operator}{HTML}{ null }
 
-\definecolor{color-general-variable}{HTML}{ {{variable-color}} }
+\definecolor{color-general-variable}{HTML}{ null }
 
-\definecolor{color-index}{HTML}{ {{index-color}} }
+\definecolor{color-index}{HTML}{ b30000 }
 
-\definecolor{color-parameter}{HTML}{ {{parameter-color}} }
+\definecolor{color-parameter}{HTML}{ null }
 
-\definecolor{color-stochastic}{HTML}{ {{stochastic-color}} }
+\definecolor{color-stochastic}{HTML}{ null }
 
-\definecolor{color-data}{HTML}{ {{data-color}} }
+\definecolor{color-data}{HTML}{ null }
 
 %--- markup of latex
 
@@ -301,4 +279,3 @@ noweb.py -Rtemplate-latex-formula-style.tex template-latex-formula-style.tex.md 
 \newcommand{\va}{{\color{color-index}\mathrm{a}}}
 \newcommand{\vV}{{\color{violet!80!black}V}}%#660066
 
-```
