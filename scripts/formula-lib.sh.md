@@ -25,5 +25,6 @@ chmod u+x formula-lib.sh && ln -sf $(pwd)/formula-lib.sh ~/.local/bin/formula-li
 *formula-lib.sh*
 ```bash
 #!/bin/bash
+echo "start formula script" > ~/.config/formula/log
 source config.sh '.config/formula/config'
 ```
