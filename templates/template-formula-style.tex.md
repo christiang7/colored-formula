@@ -29,21 +29,7 @@ noweb.py -Rtemplate-formula-style.tex template-formula-style.tex.md > template-f
 \newcommand*{\opcolor}[2]{\mathop{\color{#1}{#2}}}
 %%%%%%%%%%%%%% important variables
 
-\definecolor{color-important}{HTML}{ {{important-color}} }
-
-\definecolor{color-function-operator}{HTML}{ {{function-color}} }
-
-\definecolor{color-operator}{HTML}{ {{operator-color}} }
-
-\definecolor{color-general-variable}{HTML}{ {{variable-color}} }
-
-\definecolor{color-index}{HTML}{ {{index-color}} }
-
-\definecolor{color-parameter}{HTML}{ {{parameter-color}} }
-
-\definecolor{color-stochastic}{HTML}{ {{stochastic-color}} }
-
-\definecolor{color-data}{HTML}{ {{data-color}} }
+\input{formula-theme.tex}
 
 %--- markup of latex
 

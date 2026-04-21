@@ -1,9 +1,9 @@
 # test-color_tex 
  
 
-[[./test-color.md]]
-[[./test-color.tex]]
-[[./test-color.pdf]]
+[](./test-color.md)
+[](./test-color.tex)
+[](./test-color.pdf)
 
 Journal 
 

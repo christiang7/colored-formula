@@ -22,27 +22,24 @@ then
 	abfrage=$(yad --title="New json theme File" --text="Necessary Informations:" \
 		--form --width 500 --separator="~" --item-separator=","  \
 		--field="Filename" \
-		--field="Which template":CB \
 		--field="Author":CBE \
 		--field="Tags":CBE \
 		--field="Description":TXT \
-		"" "text,formula" "$author,Internet" ",physic,math" "")
+		"" "$author,Internet" ",physic,math" "")
 fi
 if [ ! $? -eq 1 ];
 then
 	if [[ $yadSwitch == "" ]]
     then
 		filename=$(echo $abfrage | cut -s -d "~" -f 1)
-		template=$(echo $abfrage | cut -s -d "~" -f 2)
-		source=$(echo $abfrage | cut -s -d "~" -f 3)
-		tags=$(echo $abfrage | cut -s -d "~" -f 4)
-		additiontext=$(echo $abfrage | cut -s -d "~" -f 5)
+		source=$(echo $abfrage | cut -s -d "~" -f 2)
+		tags=$(echo $abfrage | cut -s -d "~" -f 3)
+		additiontext=$(echo $abfrage | cut -s -d "~" -f 4)
 	else
 		filename="$1"
-		template="$3"
-		source="$4"
-		tags="$5"
-		additiontext="$6"
+		source="$3"
+		tags="$4"
+		additiontext="$5"
 	fi
 	title="$filename"
 	filename=$(cleanName "$filename")
@@ -50,19 +47,9 @@ then
 
 	markdown-description-program "${File}" >> "$folder"/"${File}".md
 
-	case ${template} in
-		text)
-		cp "$templateDir"/template-text-theme.json "$folder"/"${File}"
+	cp "$templateDir"/template-formula-theme.json "$folder"/"${File}"
 
-		template-code "$folder" "${File}" "$additiontext" >> "$folder"/"${File}".md
-			;;
-        formula)
-		cp "$templateDir"/template-formula-theme.json "$folder"/"${File}"
-
-		template-code "$folder" "${File}" "$additiontext" >> "$folder"/"${File}".md
-
-			;;
-	esac
+	template-code "$folder" "${File}" "$additiontext" >> "$folder"/"${File}".md
 
 
 	if [[ $gitinit == TRUE ]];
