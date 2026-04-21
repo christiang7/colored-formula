@@ -20,15 +20,7 @@ noweb.py -Rtemplate-formula-style.tex template-formula-style.tex.md > template-f
 
 *template-formula-style.tex*
 ```latex
-% Farbige Formeln richtig einfärben über die group Umgebung
-\def\mathcolor#1#{\@mathcolor{#1}}
-\def\@mathcolor#1#2#3{%
-	\protect\leavevmode
-	\begingroup\color#1{#2}#3\endgroup
-}
-\newcommand*{\opcolor}[2]{\mathop{\color{#1}{#2}}}
-%%%%%%%%%%%%%% important variables
-
+% theme
 \input{formula-theme.tex}
 
 %--- markup of latex
@@ -44,6 +36,14 @@ noweb.py -Rtemplate-formula-style.tex template-formula-style.tex.md > template-f
 \newcommand{\cfunc}[1]{\textcolor{color-function-operator}{\textbf{#1}}}
 
 %\newcommand{\cind}[1]{\textcolor{color-index}{\textbf{#1}}}
+
+% Farbige Formeln richtig einfärben über die group Umgebung
+\def\mathcolor#1#{\@mathcolor{#1}}
+\def\@mathcolor#1#2#3{%
+	\protect\leavevmode
+	\begingroup\color#1{#2}#3\endgroup
+}
+\newcommand*{\opcolor}[2]{\mathop{\color{#1}{#2}}}
 
 %--- Equations - formulas
 \newcommand{\oupdelta}{{\color{color-function-operator}\updelta}}

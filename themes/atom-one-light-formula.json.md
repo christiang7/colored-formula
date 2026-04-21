@@ -21,6 +21,10 @@ noweb.py -Ratom-one-light-formula.json atom-one-light-formula.json.md > atom-one
 *atom-one-light-formula.json*
 ```json
 {
+   "Meta": {
+      "name": "atom-one-light-formula",
+      "version": "1.0"
+   },
    "Normal": {
       "text-color": "#000000",
       "background-color": "#f5f5f5",

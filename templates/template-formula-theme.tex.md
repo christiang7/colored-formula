@@ -14,12 +14,14 @@ Created 2026-04-21
 
 *make.sh*
 ```bash
-noweb.py -Rtemplate-formula-theme.tex template-formula-theme.tex.md > template-formula-theme.tex && lualatex -interaction=nonstopmode -shell-escape template-formula-theme.tex && lualatex -interaction=nonstopmode -shell-escape template-formula-theme.tex && notify-send -a "Compilation of template-formula-theme.tex" "" "$(date +"%Y-%m-%d") fertig" && xdg-open template-formula-theme.pdf 2>/dev/null 
+noweb.py -Rtemplate-formula-theme.tex template-formula-theme.tex.md > template-formula-theme.tex && notify-send -a "Compilation of json2latex-formula-theme.tex" "" "$(date +"%Y-%m-%d") fertig" 
 ```
-
 
 *template-formula-theme.tex*
 ```latex
+% theme {{theme-name}}
+% version {{theme-version}}
+%
 
 \definecolor{color-important}{HTML}{ {{important-color}} }
 
@@ -36,5 +38,4 @@ noweb.py -Rtemplate-formula-theme.tex template-formula-theme.tex.md > template-f
 \definecolor{color-stochastic}{HTML}{ {{stochastic-color}} }
 
 \definecolor{color-data}{HTML}{ {{data-color}} }
-
 ```

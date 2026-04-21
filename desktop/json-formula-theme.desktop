@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Service
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin
+MimeType=application/json;
+Actions=json2latex-formula-theme;
+X-KDE-Priority=TopLevel
+X-KDE-Submenu=json-theme
+
+[Desktop Action json2latex-formula-theme]
+Name=json2latex-formula-theme.sh
+Icon=audio
+Terminal=true
+Exec=rm ~/.config/formula/log && json2latex-formula-theme.sh  %f 2>&1 | tee ~/.config/formula/log

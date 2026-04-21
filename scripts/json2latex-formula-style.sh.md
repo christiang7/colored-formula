@@ -9,6 +9,9 @@ Created 2026-04-14
     - [ ] 
  - [X] Doing
  
+ 
+wird nicht mehr benötigt
+ 
 ## bash code
 
 
@@ -25,7 +28,11 @@ chmod u+x json2latex-formula-style.sh && ln -sf $(pwd)/json2latex-formula-style.
 *json2latex-formula-style.sh*
 ```bash
 #!/bin/bash
-jsonFile="$1"
+source formula-lib.sh
+jsonFile="$(basename $1)"
+jsonFolder=$(dirname "$(realpath "$jsonFile")")
+installFolder="$(config_get installDir)"
+cd $installFolder
 jsonFilename="$(basename $jsonFile .json)"
 styleFile="$jsonFilename-style.tex"
 request=$(yad --title="Convert json to formula-style.tex?" --text="" \
@@ -34,20 +41,8 @@ request=$(yad --title="Convert json to formula-style.tex?" --text="" \
 	"$styleFile")
 if [ ! $? -eq 1 ];
 then
-   cp formula-style.tex formula-style.tex.back
-   cp template-formula-style.tex "$styleFile"
-   #sed -i "s/{{font}}/$(jq -r '."Normal"."font"' $jsonFile)/g" "$styleFile"style
-   #sed -i "s/{{font-size}}/$(jq -r '."Normal"."font-size"' $jsonFile)/g" "$styleFile"
-   #sed -i "s/{{text-color}}/$(jq -r '."Normal"."text-color"' $jsonFile)/g" "$styleFile"
-   #sed -i "s/{{text-background-color}}/$(jq -r '."Normal"."background-color"' $jsonFile)/g" "$styleFile"
-   sed -i "s/{{important-color}}/$(jq -r '."Important"."text-color"' $jsonFile | sed "s/#//g")/g" "$styleFile"
-   sed -i "s/{{function-color}}/$(jq -r '."Function"."text-color"' $jsonFile | sed "s/#//g")/g" "$styleFile"
-   sed -i "s/{{operator-color}}/$(jq -r '."Operator"."text-color"' $jsonFile | sed "s/#//g")/g" "$styleFile"
-   sed -i "s/{{variable-color}}/$(jq -r '."Variable"."text-color"' $jsonFile | sed "s/#//g")/g" "$styleFile"
-   sed -i "s/{{parameter-color}}/$(jq -r '."Parameter"."text-color"' $jsonFile | sed "s/#//g")/g" "$styleFile"
-   sed -i "s/{{stochastic-color}}/$(jq -r '."Stochastic"."text-color"' $jsonFile | sed "s/#//g")/g" "$styleFile"
-   sed -i "s/{{data-color}}/$(jq -r '."Data"."text-color"' $jsonFile | sed "s/#//g")/g" "$styleFile"
-   sed -i "s/{{index-color}}/$(jq -r '."Index"."text-color"' $jsonFile | sed "s/#//g")/g" "$styleFile"
-   cp "$styleFile" formula-style.tex
+   cp themes/formula-style.tex themes/formula-style.tex.back
+   cp templates/template-formula-style.tex themes/"$styleFile"
+   cp themes/"$styleFile" themes/formula-style.tex
 fi
 ```

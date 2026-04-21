@@ -32,11 +32,11 @@ yadSwitch=$2
 
 if [[ ! -e "$1" ]]
 then
-> folder=$(pwd)
+  folder=$(pwd)
 else
-> filetxt=$(readlink -f -n "$1")
-> folder=${filetxt%.*}
-> mkdir -p "$folder"
+  filetxt=$(readlink -f -n "$1")
+  folder=${filetxt%.*}
+  mkdir -p "$folder"
 fi
 cd "$folder"
 echo "$folder"
@@ -55,23 +55,23 @@ the first line is needed for shell scripts
 *preamble*
 ```bash
 #!/bin/bash
-source config.sh; # load the config library functions
+source formula-lib.sh; # load the config library functions
 templateDir="$(config_get templateDir)"
+source tt-lib.sh; # load the config library functions
 author="$(config_get author)"
-source tt-lib.sh;
 ```
 
 ### Request
 
 *request*
 ```bash
-abfrage=$(yad --title="New json theme File" --text="Necessary Informations:" \
-> --form --width 500 --separator="~" --item-separator=","  \
-> --field="Filename" \
-> --field="Author":CBE \
-> --field="Tags":CBE \
-> --field="Description":TXT \
-> "" "$author,Internet" ",physic,math" "")
+abfrage=$(yad --title="New json formula theme File" --text="Necessary Informations:" \
+  --form --width 500 --separator="~" --item-separator=","  \
+  --field="Filename" \
+  --field="Author":CBE \
+  --field="Tags":CBE \
+  --field="Description":TXT \
+  "" "$author,Internet" ",physic,math" "")
 ```
 
 ### Main
@@ -81,36 +81,36 @@ abfrage=$(yad --title="New json theme File" --text="Necessary Informations:" \
 ```bash
 if [[ $yadSwitch == "" ]]
 then
-> #*request}}
+  #*request}}
 fi
 if [ ! $? -eq 1 ];
 then
-> if [[ $yadSwitch == "" ]]
-> then
-> > filename=$(echo $abfrage | cut -s -d "~" -f 1)
-> > source=$(echo $abfrage | cut -s -d "~" -f 2)
-> > tags=$(echo $abfrage | cut -s -d "~" -f 3)
-> > additiontext=$(echo $abfrage | cut -s -d "~" -f 4)
-> else
-> > filename="$1"
-> > source="$3"
-> > tags="$4"
-> > additiontext="$5"
-> fi
-> title="$filename"
-> filename=$(cleanName "$filename")
-> File="${filename}.json"
+  if [[ $yadSwitch == "" ]]
+  then
+    filename=$(echo $abfrage | cut -s -d "~" -f 1)
+    source=$(echo $abfrage | cut -s -d "~" -f 2)
+    tags=$(echo $abfrage | cut -s -d "~" -f 3)
+    additiontext=$(echo $abfrage | cut -s -d "~" -f 4)
+  else
+    filename="$1"
+    source="$3"
+    tags="$4"
+    additiontext="$5"
+  fi
+  title="$filename"
+  filename="$(cleanName "$filename")-formula"
+  File="${filename}.json"
 	
-> markdown-description-program "${File}" >> "$folder"/"${File}".md
+  markdown-description-program "${File}" >> "$folder"/"${File}".md
 
-> #*formula template}}
+  #*formula template}}
 
-> if [[ $gitinit == TRUE ]];
-> then
-> > #*git init}}
-> fi
+  if [[ $gitinit == TRUE ]];
+  then
+    #*git init}}
+  fi
 	
-> notify-send -a "Created template $File" "" "$(date +"%Y-%m-%d") fertig"
+  notify-send -a "Created template $File" "" "$(date +"%Y-%m-%d") fertig"
 fi
 ```
 
