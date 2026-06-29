@@ -23,6 +23,10 @@ noweb.py -Rtemplate-formula-theme.tex template-formula-theme.tex.md > template-f
 % version {{theme-version}}
 %
 
+\definecolor{color-text}{HTML}{ {{text-color}} }
+
+\definecolor{color-text-background}{HTML}{ {{text-background-color}} }
+
 \definecolor{color-important}{HTML}{ {{important-color}} }
 
 \definecolor{color-function-operator}{HTML}{ {{function-color}} }
